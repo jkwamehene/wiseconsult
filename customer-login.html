@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verified Global E-Transport  Customer Portal - Login to book rides and manage your account">
+    <title>Customer Login - Verified Global E-Transport </title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+                </a>
+
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="auth-background">
+            <div class="auth-shape auth-shape-1"></div>
+            <div class="auth-shape auth-shape-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="auth-container">
+                <!-- Left Side - Info -->
+                <div class="auth-info" data-aos="fade-right">
+                    <div class="auth-info-content">
+                        <div class="auth-badge customer">
+                            <i class="fas fa-user"></i>
+                            <span>Customer Portal</span>
+                        </div>
+                        <h1>Welcome Back!</h1>
+                        <p>Sign in to book your next eco-friendly journey, track your rides in real-time, and manage your travel preferences.</p>
+
+                        <div class="auth-features">
+                            <div class="auth-feature">
+                                <i class="fas fa-ticket"></i>
+                                <div>
+                                    <strong>Quick Booking</strong>
+                                    <span>Reserve your seat instantly</span>
+                                </div>
+                            </div>
+                            <div class="auth-feature">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Live Tracking</strong>
+                                    <span>Track your bus in real-time</span>
+                                </div>
+                            </div>
+                            <div class="auth-feature">
+                                <i class="fas fa-history"></i>
+                                <div>
+                                    <strong>Trip History</strong>
+                                    <span>View all your past journeys</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-switch">
+                            <p>Are you an admin?</p>
+                            <a href="admin-login.html" class="btn-secondary">Admin Login</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Login Form -->
+                <div class="auth-form-wrapper" data-aos="fade-left">
+                    <div class="auth-form-header">
+                        <i class="fas fa-user-circle"></i>
+                        <h2>Customer Sign In</h2>
+                        <p>Login to access your account and book rides</p>
+                    </div>
+
+                    <form class="auth-form" id="customerLoginForm">
+                        <div class="form-group">
+                            <label for="customerEmail">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <input 
+                                type="email" 
+                                id="customerEmail" 
+                                name="email" 
+                                placeholder="your.email@example.com"
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerPassword">
+                                <i class="fas fa-lock"></i>
+                                Password
+                            </label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="customerPassword" 
+                                    name="password" 
+                                    placeholder="Enter your password"
+                                    required
+                                    autocomplete="current-password"
+                                >
+                                <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="remember">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block btn-large">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Sign In
+                        </button>
+
+                        <div class="auth-divider">
+                            <span>OR</span>
+                        </div>
+
+                        <button type="button" class="btn-social btn-google">
+                            <i class="fab fa-google"></i>
+                            Continue with Google
+                        </button>
+
+                        <button type="button" class="btn-social btn-facebook">
+                            <i class="fab fa-facebook"></i>
+                            Continue with Facebook
+                        </button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p>Don't have an account?</p>
+                        <a href="#" class="signup-link">Sign Up Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <p>&copy; 2026 Verified Global E-Transport . All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - VeriTransGH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-page customer">
+    <!-- Customer Navbar -->
+    <nav class="dashboard-nav">
+        <div class="nav-brand">
+            <div class="logo-icon"><i class="fas fa-charging-station"></i></div>
+            <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+        </div>
+        <div class="nav-actions">
+            <button class="nav-btn"><i class="fas fa-bell"></i><span class="badge">2</span></button>
+            <div class="admin-profile">
+                <img src="https://i.pravatar.cc/100?img=5" alt="User">
+                <div>
+                    <strong>Ama Osei</strong>
+                    <span>Customer</span>
+                </div>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-menu">
+                <a href="#" class="menu-item active">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-ticket"></i> My Bookings
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-clock"></i> Trip History
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-heart"></i> Favorites
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-credit-card"></i> Payment Methods
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-headset"></i> Support
+                </a>
+                <a href="index.html" class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <h1>Welcome back, Ama! 👋</h1>
+                    <p>Ready for your next eco-friendly journey?</p>
+                    <button class="btn-primary"><i class="fas fa-plus"></i> Book New Trip</button>
+                </div>
+                <div class="welcome-visual">
+                    <i class="fas fa-bus"></i>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="customer-stats">
+                <div class="stat-card">
+                    <i class="fas fa-ticket"></i>
+                    <h3>12</h3>
+                    <p>Total Trips</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>156 kg</h3>
+                    <p>CO₂ Saved</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-coins"></i>
+                    <h3>GHS 240</h3>
+                    <p>Money Saved</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Gold</h3>
+                    <p>Member Status</p>
+                </div>
+            </div>
+
+            <!-- Upcoming Trips -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2>Upcoming Trips</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="trips-list">
+                    <div class="trip-card active">
+                        <div class="trip-route">
+                            <div class="route-point">
+                                <i class="fas fa-circle"></i>
+                                <strong>Accra</strong>
+                                <span>07:30 AM</span>
+                            </div>
+                            <div class="route-line"></div>
+                            <div class="route-point">
+                                <i class="fas fa-location-dot"></i>
+                                <strong>Kumasi</strong>
+                                <span>11:45 AM</span>
+                            </div>
+                        </div>
+                        <div class="trip-details">
+                            <span class="trip-date"><i class="fas fa-calendar"></i> Tomorrow, Jan 5</span>
+                            <span class="trip-bus"><i class="fas fa-bus"></i> Bus #VT-042</span>
+                            <span class="trip-seat"><i class="fas fa-chair"></i> Seat 12A</span>
+                        </div>
+                        <div class="trip-actions">
+                            <button class="btn-secondary btn-small">Track</button>
+                            <button class="btn-outline btn-small">Details</button>
+                        </div>
+                    </div>
+
+                    <div class="trip-card">
+                        <div class="trip-route">
+                            <div class="route-point">
+                                <i class="fas fa-circle"></i>
+                                <strong>Kumasi</strong>
+                                <span>02:00 PM</span>
+                            </div>
+                            <div class="route-line"></div>
+                            <div class="route-point">
+                                <i class="fas fa-location-dot"></i>
+                                <strong>Accra</strong>
+                                <span>06:15 PM</span>
+                            </div>
+                        </div>
+                        <div class="trip-details">
+                            <span class="trip-date"><i class="fas fa-calendar"></i> Jan 8, 2026</span>
+                            <span class="trip-bus"><i class="fas fa-bus"></i> Bus #VT-038</span>
+                            <span class="trip-seat"><i class="fas fa-chair"></i> Seat 8B</span>
+                        </div>
+                        <div class="trip-actions">
+                            <button class="btn-secondary btn-small">Modify</button>
+                            <button class="btn-outline btn-small">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Trips -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2>Recent Trips</h2>
+                    <a href="#" class="view-all">View History</a>
+                </div>
+                <div class="history-list">
+                    <div class="history-item">
+                        <div class="history-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="history-info">
+                            <strong>Accra → Cape Coast</strong>
+                            <p>Completed on Dec 28, 2025</p>
+                        </div>
+                        <div class="history-meta">
+                            <span class="trip-price">GHS 45</span>
+                            <button class="btn-link">Book Again</button>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="history-info">
+                            <strong>Kumasi → Tamale</strong>
+                            <p>Completed on Dec 22, 2025</p>
+                        </div>
+                        <div class="history-meta">
+                            <span class="trip-price">GHS 65</span>
+                            <button class="btn-link">Book Again</button>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="history-info">
+                            <strong>Accra → Takoradi</strong>
+                            <p>Completed on Dec 15, 2025</p>
+                        </div>
+                        <div class="history-meta">
+                            <span class="trip-price">GHS 55</span>
+                            <button class="btn-link">Book Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Environmental Impact -->
+            <div class="impact-card">
+                <h2>Your Environmental Impact</h2>
+                <div class="impact-visual">
+                    <div class="impact-circle">
+                        <i class="fas fa-leaf"></i>
+                        <strong>156 kg</strong>
+                        <span>CO₂ Saved</span>
+                    </div>
+                    <div class="impact-stats-grid">
+                        <div class="impact-item">
+                            <i class="fas fa-tree"></i>
+                            <strong>7</strong>
+                            <span>Trees equivalent</span>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-gas-pump"></i>
+                            <strong>68L</strong>
+                            <span>Fuel saved</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

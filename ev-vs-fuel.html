@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare electric vehicle costs vs fuel costs - See the real savings over time with Verified Global E-Transport ">
+    <title>EV vs Fuel Cost Comparison - Verified Global E-Transport </title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+                </a>
+
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="resources.html" class="nav-link active">Resources</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                    <a href="customer-login.html" class="btn-primary">Login</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <span class="section-badge">Cost Analysis</span>
+                <h1>EV vs Fuel Cost Comparison</h1>
+                <p>Discover the real cost savings of electric transportation over time</p>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Comparison Calculator -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-layout">
+                <!-- Input Form -->
+                <div class="calculator-card" data-aos="fade-right">
+                    <div class="calculator-header">
+                        <i class="fas fa-calculator"></i>
+                        <h2>Calculate Your Savings</h2>
+                        <p>Enter your travel information to compare costs</p>
+                    </div>
+
+                    <form class="calculator-form" id="evFuelCalculator">
+                        <div class="form-group">
+                            <label for="distancePerWeek">
+                                <i class="fas fa-route"></i>
+                                Distance Traveled Per Week (km)
+                            </label>
+                            <input 
+                                type="number" 
+                                id="distancePerWeek" 
+                                placeholder="e.g., 100" 
+                                min="1" 
+                                value="100"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fuelPrice">
+                                <i class="fas fa-gas-pump"></i>
+                                Fuel Price per Liter (GHS)
+                            </label>
+                            <input 
+                                type="number" 
+                                id="fuelPrice" 
+                                placeholder="e.g., 15" 
+                                min="1" 
+                                step="0.1"
+                                value="15.5"
+                                required
+                            >
+                            <small>Current average: GHS 15.50/liter</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fuelConsumption">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Vehicle Fuel Consumption (L/100km)
+                            </label>
+                            <input 
+                                type="number" 
+                                id="fuelConsumption" 
+                                placeholder="e.g., 8" 
+                                min="1" 
+                                step="0.1"
+                                value="10"
+                                required
+                            >
+                            <small>Average bus: 10-12 L/100km</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="electricityRate">
+                                <i class="fas fa-bolt"></i>
+                                Electricity Rate (GHS/kWh)
+                            </label>
+                            <input 
+                                type="number" 
+                                id="electricityRate" 
+                                placeholder="e.g., 1.5" 
+                                min="0.1" 
+                                step="0.1"
+                                value="1.2"
+                                required
+                            >
+                            <small>Ghana average: GHS 1.20/kWh</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeframe">
+                                <i class="fas fa-calendar"></i>
+                                Calculate For
+                            </label>
+                            <select id="timeframe" required>
+                                <option value="1">1 Month</option>
+                                <option value="6">6 Months</option>
+                                <option value="12" selected>1 Year</option>
+                                <option value="36">3 Years</option>
+                                <option value="60">5 Years</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block btn-large">
+                            <i class="fas fa-chart-bar"></i>
+                            Compare Costs
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Results -->
+                <div class="results-card" data-aos="fade-left" id="resultsCard">
+                    <div class="results-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h2>Cost Comparison Results</h2>
+                    </div>
+
+                    <div class="results-content">
+                        <!-- Cost Cards -->
+                        <div class="cost-comparison">
+                            <div class="cost-card fuel-cost">
+                                <i class="fas fa-gas-pump"></i>
+                                <div class="cost-label">Fuel Vehicle Cost</div>
+                                <div class="cost-amount" id="fuelCost">GHS 0</div>
+                            </div>
+
+                            <div class="cost-card ev-cost">
+                                <i class="fas fa-bolt"></i>
+                                <div class="cost-label">Electric Vehicle Cost</div>
+                                <div class="cost-amount" id="evCost">GHS 0</div>
+                            </div>
+                        </div>
+
+                        <div class="savings-highlight">
+                            <div class="savings-icon">
+                                <i class="fas fa-piggy-bank"></i>
+                            </div>
+                            <div class="savings-info">
+                                <div class="savings-label">Total Savings</div>
+                                <div class="savings-amount" id="totalSavings">GHS 0</div>
+                                <div class="savings-percentage" id="savingsPercent">0% cheaper</div>
+                            </div>
+                        </div>
+
+                        <!-- Chart -->
+                        <div class="chart-container">
+                            <canvas id="costChart"></canvas>
+                        </div>
+
+                        <!-- Breakdown -->
+                        <div class="cost-breakdown">
+                            <h3>Cost Breakdown</h3>
+                            <div class="breakdown-grid">
+                                <div class="breakdown-item">
+                                    <i class="fas fa-road"></i>
+                                    <div>
+                                        <strong id="totalDistance">0 km</strong>
+                                        <span>Total Distance</span>
+                                    </div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <i class="fas fa-calendar-week"></i>
+                                    <div>
+                                        <strong id="weeksCount">0 weeks</strong>
+                                        <span>Time Period</span>
+                                    </div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <i class="fas fa-leaf"></i>
+                                    <div>
+                                        <strong id="co2Avoided">0 kg</strong>
+                                        <span>CO₂ Avoided</span>
+                                    </div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <i class="fas fa-percentage"></i>
+                                    <div>
+                                        <strong id="efficiency">0%</strong>
+                                        <span>More Efficient</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="results-actions">
+                            <button type="button" class="btn-primary" onclick="window.location.href='customer-login.html'">
+                                <i class="fas fa-ticket"></i>
+                                Start Saving Now
+                            </button>
+                            <button type="button" class="btn-secondary" onclick="resetComparison()">
+                                <i class="fas fa-redo"></i>
+                                New Comparison
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Quick Facts</span>
+                <h2>Why Electric is Better</h2>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Lower Operating Costs</h3>
+                    <p>Electric vehicles have 60-70% lower energy costs compared to fuel vehicles, with additional savings on maintenance.</p>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Less Maintenance</h3>
+                    <p>EVs have fewer moving parts, no oil changes, and reduced brake wear, cutting maintenance costs by up to 50%.</p>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Stable Energy Prices</h3>
+                    <p>Electricity prices are more stable than fuel prices, providing predictable operating costs for better budgeting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-charging-station"></i>
+                        </div>
+                        <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+                    </a>
+                    <p>Ghana's premier electric vehicle transportation network.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="carbon-calculator.html">Carbon Calculator</a></li>
+                        <li><a href="ev-vs-fuel.html">EV vs Fuel</a></li>
+                        <li><a href="ev-database.html">EV Database</a></li>
+                        <li><a href="ev-maintenance.html">Maintenance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="customer-login.html">Customer Login</a></li>
+                        <li><a href="admin-login.html">Admin Login</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Verified Global E-Transport . All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="ev-vs-fuel.js"></script>
+</body>
+</html>

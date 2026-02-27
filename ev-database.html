@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our comprehensive database of electric vehicles and charging stations in Ghana">
+    <title>EV Database - Verified Global E-Transport </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="database.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-charging-station"></i></div>
+                    <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+                </a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="resources.html" class="nav-link active">Resources</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                    <a href="customer-login.html" class="btn-primary">Login</a>
+                </div>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <span class="section-badge">Vehicle Information</span>
+                <h1>EV Database</h1>
+                <p>Explore electric vehicles and charging stations across Ghana</p>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="database-section">
+        <div class="container">
+            <div class="database-tabs" data-aos="fade-up">
+                <button class="tab-btn active" data-tab="vehicles">
+                    <i class="fas fa-bus"></i> Our Fleet
+                </button>
+                <button class="tab-btn" data-tab="charging">
+                    <i class="fas fa-charging-station"></i> Charging Stations
+                </button>
+                <button class="tab-btn" data-tab="specs">
+                    <i class="fas fa-chart-bar"></i> Specifications
+                </button>
+            </div>
+
+            <div class="tab-content active" id="vehicles">
+                <div class="search-filter" data-aos="fade-up">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchVehicles" placeholder="Search vehicles...">
+                    </div>
+                    <select id="filterType">
+                        <option value="all">All Types</option>
+                        <option value="bus">Buses</option>
+                        <option value="van">Vans</option>
+                        <option value="sedan">Sedans</option>
+                    </select>
+                </div>
+
+                <div class="vehicles-grid" id="vehiclesGrid">
+                    <!-- Vehicle Cards will be inserted here -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="charging">
+                <div class="charging-stats" data-aos="fade-up">
+                    <div class="stat-box">
+                        <i class="fas fa-charging-station"></i>
+                        <strong>45</strong>
+                        <span>Total Stations</span>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <strong>15</strong>
+                        <span>Cities Covered</span>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-bolt"></i>
+                        <strong>180</strong>
+                        <span>Charging Points</span>
+                    </div>
+                </div>
+
+                <div class="stations-list" data-aos="fade-up">
+                    <div class="station-card">
+                        <div class="station-header">
+                            <h3><i class="fas fa-map-marker-alt"></i> Accra Central Station</h3>
+                            <span class="badge-available">Available</span>
+                        </div>
+                        <p>Ring Road Central, Accra</p>
+                        <div class="station-info">
+                            <span><i class="fas fa-plug"></i> 12 Chargers</span>
+                            <span><i class="fas fa-clock"></i> 24/7</span>
+                            <span><i class="fas fa-bolt"></i> Fast Charging</span>
+                        </div>
+                    </div>
+
+                    <div class="station-card">
+                        <div class="station-header">
+                            <h3><i class="fas fa-map-marker-alt"></i> Kumasi Tech Hub</h3>
+                            <span class="badge-available">Available</span>
+                        </div>
+                        <p>Ahodwo, Kumasi</p>
+                        <div class="station-info">
+                            <span><i class="fas fa-plug"></i> 8 Chargers</span>
+                            <span><i class="fas fa-clock"></i> 6AM - 10PM</span>
+                            <span><i class="fas fa-bolt"></i> Fast Charging</span>
+                        </div>
+                    </div>
+
+                    <div class="station-card">
+                        <div class="station-header">
+                            <h3><i class="fas fa-map-marker-alt"></i> Takoradi Harbor</h3>
+                            <span class="badge-busy">Busy</span>
+                        </div>
+                        <p>Market Circle, Takoradi</p>
+                        <div class="station-info">
+                            <span><i class="fas fa-plug"></i> 6 Chargers</span>
+                            <span><i class="fas fa-clock"></i> 24/7</span>
+                            <span><i class="fas fa-bolt"></i> Standard Charging</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="specs">
+                <div class="specs-comparison" data-aos="fade-up">
+                    <h2>Technical Specifications</h2>
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Specification</th>
+                                    <th>Electric Bus</th>
+                                    <th>Diesel Bus</th>
+                                    <th>Advantage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Energy Cost/100km</td>
+                                    <td><strong>GHS 24</strong></td>
+                                    <td>GHS 155</td>
+                                    <td class="advantage"><i class="fas fa-check-circle"></i> 84% cheaper</td>
+                                </tr>
+                                <tr>
+                                    <td>Maintenance Cost/Year</td>
+                                    <td><strong>GHS 3,500</strong></td>
+                                    <td>GHS 12,000</td>
+                                    <td class="advantage"><i class="fas fa-check-circle"></i> 71% cheaper</td>
+                                </tr>
+                                <tr>
+                                    <td>CO₂ Emissions</td>
+                                    <td><strong>0 g/km</strong></td>
+                                    <td>850 g/km</td>
+                                    <td class="advantage"><i class="fas fa-check-circle"></i> Zero emissions</td>
+                                </tr>
+                                <tr>
+                                    <td>Noise Level</td>
+                                    <td><strong>65 dB</strong></td>
+                                    <td>85 dB</td>
+                                    <td class="advantage"><i class="fas fa-check-circle"></i> 24% quieter</td>
+                                </tr>
+                                <tr>
+                                    <td>Acceleration 0-60km/h</td>
+                                    <td><strong>8 seconds</strong></td>
+                                    <td>15 seconds</td>
+                                    <td class="advantage"><i class="fas fa-check-circle"></i> 47% faster</td>
+                                </tr>
+                                <tr>
+                                    <td>Range</td>
+                                    <td><strong>350 km</strong></td>
+                                    <td>450 km</td>
+                                    <td>Diesel advantage</td>
+                                </tr>
+                                <tr>
+                                    <td>Refuel/Recharge Time</td>
+                                    <td><strong>2-4 hours</strong></td>
+                                    <td>10 minutes</td>
+                                    <td>Diesel advantage</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon"><i class="fas fa-charging-station"></i></div>
+                        <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+                    </a>
+                    <p>Ghana's premier electric vehicle transportation network.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="carbon-calculator.html">Carbon Calculator</a></li>
+                        <li><a href="ev-vs-fuel.html">EV vs Fuel</a></li>
+                        <li><a href="ev-database.html">EV Database</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Verified Global E-Transport . All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="database.js"></script>
+</body>
+</html>

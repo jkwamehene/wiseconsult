@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your carbon footprint and see how much CO₂ you save by choosing electric transportation">
+    <title>Carbon Footprint Calculator - VeriTransGH</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+                </a>
+
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="resources.html" class="nav-link active">Resources</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                    <a href="customer-login.html" class="btn-primary">Login</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <span class="section-badge">Environmental Impact</span>
+                <h1>Carbon Footprint Calculator</h1>
+                <p>Calculate how much CO₂ you save by choosing electric transportation</p>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-layout">
+                <!-- Calculator Form -->
+                <div class="calculator-card" data-aos="fade-right">
+                    <div class="calculator-header">
+                        <i class="fas fa-calculator"></i>
+                        <h2>Your Travel Details</h2>
+                        <p>Enter your typical travel information to calculate your carbon savings</p>
+                    </div>
+
+                    <form class="calculator-form" id="carbonCalculator">
+                        <div class="form-group">
+                            <label for="distance">
+                                <i class="fas fa-route"></i>
+                                Distance (km)
+                            </label>
+                            <input 
+                                type="number" 
+                                id="distance" 
+                                placeholder="e.g., 250" 
+                                min="1" 
+                                max="10000"
+                                required
+                            >
+                            <small>Enter the distance of your journey in kilometers</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="frequency">
+                                <i class="fas fa-calendar"></i>
+                                How often do you travel this route?
+                            </label>
+                            <select id="frequency" required>
+                                <option value="">Select frequency</option>
+                                <option value="1">Once (One-time trip)</option>
+                                <option value="4">Weekly (Once a week)</option>
+                                <option value="8">Twice a week</option>
+                                <option value="20">Monthly (5 times/month)</option>
+                                <option value="240">Daily (20 days/month)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicleType">
+                                <i class="fas fa-car"></i>
+                                Compare with
+                            </label>
+                            <select id="vehicleType" required>
+                                <option value="">Select vehicle type</option>
+                                <option value="0.12">Diesel Bus (Standard)</option>
+                                <option value="0.15">Petrol Bus</option>
+                                <option value="0.18">Private Car (Solo)</option>
+                                <option value="0.09">Shared Taxi</option>
+                            </select>
+                            <small>Select the vehicle you would typically use</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeframe">
+                                <i class="fas fa-clock"></i>
+                                Calculate for
+                            </label>
+                            <select id="timeframe" required>
+                                <option value="">Select period</option>
+                                <option value="1">1 Month</option>
+                                <option value="3">3 Months</option>
+                                <option value="6">6 Months</option>
+                                <option value="12">1 Year</option>
+                                <option value="60">5 Years</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block btn-large">
+                            <i class="fas fa-calculator"></i>
+                            Calculate My Impact
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Results Card -->
+                <div class="results-card" data-aos="fade-left" id="resultsCard" style="display: none;">
+                    <div class="results-header">
+                        <i class="fas fa-leaf"></i>
+                        <h2>Your Environmental Impact</h2>
+                    </div>
+
+                    <div class="results-content">
+                        <div class="result-main">
+                            <div class="result-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="result-value">
+                                <span class="result-number" id="co2Saved">0</span>
+                                <span class="result-unit">kg CO₂</span>
+                            </div>
+                            <div class="result-label">Carbon Emissions Saved</div>
+                        </div>
+
+                        <div class="results-comparison">
+                            <h3>That's equivalent to:</h3>
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <i class="fas fa-tree"></i>
+                                    <strong id="treeEquiv">0</strong>
+                                    <span>Trees planted</span>
+                                </div>
+                                <div class="comparison-item">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <strong id="fuelSaved">0</strong>
+                                    <span>Liters of fuel saved</span>
+                                </div>
+                                <div class="comparison-item">
+                                    <i class="fas fa-home"></i>
+                                    <strong id="homeEquiv">0</strong>
+                                    <span>Days of home energy</span>
+                                </div>
+                                <div class="comparison-item">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <strong id="lightbulbEquiv">0</strong>
+                                    <span>LED bulbs for a year</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="results-chart">
+                            <h3>Monthly CO₂ Comparison</h3>
+                            <div class="chart-bars">
+                                <div class="chart-bar">
+                                    <div class="bar-fill traditional" id="traditionalBar">
+                                        <span class="bar-value" id="traditionalValue">0 kg</span>
+                                    </div>
+                                    <div class="bar-label">Traditional Vehicle</div>
+                                </div>
+                                <div class="chart-bar">
+                                    <div class="bar-fill electric">
+                                        <span class="bar-value">0 kg</span>
+                                    </div>
+                                    <div class="bar-label">VeriTransGH Electric</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="results-actions">
+                            <button type="button" class="btn-primary" onclick="window.location.href='customer-login.html'">
+                                <i class="fas fa-ticket"></i>
+                                Book Green Ride Now
+                            </button>
+                            <button type="button" class="btn-secondary" onclick="resetCalculator()">
+                                <i class="fas fa-redo"></i>
+                                Calculate Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Understanding the Impact</span>
+                <h2>Why Every Journey Matters</h2>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-smog"></i>
+                    <h3>Transportation Emissions</h3>
+                    <p>Transportation accounts for 24% of global CO₂ emissions. In Ghana, diesel and petrol buses are major contributors to urban air pollution.</p>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Electric Advantage</h3>
+                    <p>Electric buses produce zero direct emissions and are 3x more energy-efficient than traditional vehicles, even when accounting for electricity generation.</p>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-users"></i>
+                    <h3>Collective Impact</h3>
+                    <p>With 50,000+ passengers, VeriTransGH has prevented over 2,400 tons of CO₂ emissions, equivalent to planting 110,000 trees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-charging-station"></i>
+                        </div>
+                        <span class="logo-text">VeriTrans<span class="logo-accent">GH</span></span>
+                    </a>
+                    <p>Ghana's premier electric vehicle transportation network.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="carbon-calculator.html">Carbon Calculator</a></li>
+                        <li><a href="ev-vs-fuel.html">EV vs Fuel</a></li>
+                        <li><a href="ev-database.html">EV Database</a></li>
+                        <li><a href="ev-maintenance.html">Maintenance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="customer-login.html">Login</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 VeriTransGH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>
