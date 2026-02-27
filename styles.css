@@ -6,13 +6,13 @@
 /* ===== CSS VARIABLES ===== */
 :root {
     /* Primary Colors */
-    --primary-green: #10b981;
-    --primary-dark: #059669;
-    --primary-light: #34d399;
+    --primary-green: #7c3aed;
+    --primary-dark: #6d28d9;
+    --primary-light: #a78bfa;
 
     /* Accent Colors */
-    --electric-blue: #0ea5e9;
-    --orange-accent: #f97316;
+    --electric-blue: #8b5cf6;
+    --orange-accent: #d946ef;
 
     /* Neutrals */
     --dark-navy: #0f172a;
@@ -27,17 +27,17 @@
     --white: #ffffff;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-    --gradient-blue: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+    --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+    --gradient-blue: linear-gradient(135deg, #8b5cf6 0%, #c4b5fd 100%);
     --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    --gradient-orange: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+    --gradient-orange: linear-gradient(135deg, #d946ef 0%, #f5d0fe 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
-    --shadow-glow: 0 0 40px rgba(16, 185, 129, 0.3);
+    --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.3);
 
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
